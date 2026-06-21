@@ -1,7 +1,7 @@
 name: Deploy Pokedex to GitHub Pages
 
 on:
-  workflow_dispatch: # Permite ejecutarlo manualmente desde la pestaña Actions
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -27,7 +27,7 @@ jobs:
         run: pip install requests
 
       - name: Build HTML5 Pokedex
-        run: python build_pokedex.py
+        run: python .github/workflows/build_pokedex.py
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
